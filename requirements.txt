@@ -1,0 +1,7 @@
+mss>=9.0,<11
+Pillow>=10.1,<13
+PyAutoGUI>=0.9.54,<1
+Pyperclip>=1.8,<2
+pyobjc-core>=10,<12; sys_platform == "darwin"
+pyobjc-framework-Cocoa>=10,<12; sys_platform == "darwin"
+pyobjc-framework-Quartz>=10,<12; sys_platform == "darwin"

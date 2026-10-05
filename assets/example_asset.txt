@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "goal": "Open the application search field, type a query, and show matching results",
+  "success_criteria": [
+    "The search field contains the expected query",
+    "A visible result list is present"
+  ],
+  "monitor": 1,
+  "capture": "C:/replace/with/initial.capture.json",
+  "default_pause_ms": 350,
+  "max_runtime_seconds": 60,
+  "actions": [
+    {
+      "id": "focus-search",
+      "type": "click",
+      "description": "Focus the visible application search field",
+      "confidence": 0.96,
+      "sensitive": false,
+      "target": {
+        "space": "normalized",
+        "monitor": 1,
+        "x": 0.5,
+        "y": 0.12
+      }
+    },
+    {
+      "id": "enter-query",
+      "type": "type",
+      "description": "Type the non-sensitive search query",
+      "confidence": 0.99,
+      "sensitive": false,
+      "text": "example query",
+      "interval_ms": 30
+    },
+    {
+      "id": "wait-results",
+      "type": "wait",
+      "description": "Wait for the result list to render",
+      "confidence": 0.99,
+      "sensitive": false,
+      "seconds": 1.5
+    },
+    {
+      "id": "capture-results",
+      "type": "screenshot",
+      "description": "Capture evidence for visual verification",
+      "confidence": 0.99,
+      "sensitive": false,
+      "label": "results"
+    }
+  ]
+}
